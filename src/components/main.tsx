@@ -195,7 +195,7 @@ export function Main() {
                <img src={feedbacks.src} alt="Propósito" className="max-w-[75px] rounded-full"/>
                </div>
                 <div className="flex flex-wrap gap-4 justify-center items-center">
-                    <div  className="p-4 rounded-lg w-[200px] drop-shadow-lgborder-b-0 border-t-0 border-r-0 boder-l-0 border-blue-500 border-b">
+                    <div data-aos="fade-up-right" className="p-4 rounded-lg w-[200px] drop-shadow-lgborder-b-0 border-t-0 border-r-0 boder-l-0 border-blue-500 border-b">
                         oi
                     </div>
                 </div>
