@@ -19,7 +19,7 @@ export default function RootLayout({
       <meta name="author" content="Óscar Jeremias" />
         <link rel="icon" type="image/x-icon" href={icon.src} />
       </head>
-      <body className="flex justify-center items-center flex-col bg-white">{children}</body>
+      <body className="scroll-smooth flex justify-center items-center flex-col bg-white">{children}</body>
     </html>
   )
 }

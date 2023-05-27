@@ -13,36 +13,12 @@ import parceria from "../assets/parceria.png"
 import feedbacks from "../assets/feedbacks.jpg"
 import Link from 'next/link';
 import { CaretUp } from '@phosphor-icons/react';
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import Aos from 'aos';
 
-const boxVariant = {
-    visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.2 } },
-    hidden: { opacity: 0, scale: 0, y: 200 }
-  };
-  function Animate({ children }:any) {
-    const control = useAnimation();
-    const [ref, inView] = useInView();
-  
-    useEffect(() => {
-      if (inView) {
-        control.start("visible");
-      } else {
-        control.start("hidden");
-      }
-    }, [control, inView]);
-    return (
-        <motion.div
-        ref={ref}
-        variants={boxVariant}
-        initial="hidden"
-        animate={control}>
-            {children}
-        </motion.div>
-    )
-  }
 export function Main() {
-   
+   useEffect(() => {
+    Aos.init({ duration: 500})
+   },[])
 
   
     return (
@@ -50,30 +26,27 @@ export function Main() {
             <div  className="min-w-full flex justify-center items-center bg-[url('../assets/banner.png')] text-white h-[200px]">
                 <Link href="https://api.whatsapp.com/send/?phone=244939039608&text&type=phone_number&app_absent=0" className="bg-blue-500 py-3 px-6 text-white hover:bg-white hover:text-black transition-all rounded-lg drop-shadow-lg border border-black">Junte-se a nós</Link>
             </div>
-            <div   className='w-full self-start flex flex-wrap gap-6 justify-between items-start p-4 md:px-20 lg:px-50 '>
-            <Animate>
-            <div  className='box text-4xl lg:text-8xl font-bold bg-blue-500 py-3 px-6 rounded-lg text-white'>C.O.V.E.R</div>
-            </Animate>
-            <Animate>
-            <div className='font-bold bg-blue-500 py-3 px-6 rounded-lg text-white'>Agência de Marketing</div>
-            </Animate>
-            <Animate>
-            <div  className='font-bold bg-blue-500 py-3 px-6 rounded-lg text-white self-end'>Apenas começa no começo</div>
-            </Animate>
-            <Animate>
-            <div  className='bg-blue-500 py-3 px-6 rounded-lg text-white self-start lg:self-center'>
+            <div  className='w-full self-start flex flex-wrap gap-6 justify-between items-start p-4 md:px-20 lg:px-50 '>
+      
+            <div data-aos="zoom-in-left"  className='box text-4xl lg:text-8xl font-bold bg-blue-500 py-3 px-6 rounded-lg text-white'>C.O.V.E.R</div>
+     
+            <div data-aos="zoom-in-right" className='font-bold bg-blue-500 py-3 px-6 rounded-lg text-white'>Agência de Marketing</div>
+         
+            <div data-aos="zoom-in-left" className='font-bold bg-blue-500 py-3 px-6 rounded-lg text-white self-end'>Apenas começa no começo</div>
+    
+            <div data-aos="zoom-in-right" className='bg-blue-500 py-3 px-6 rounded-lg text-white self-start lg:self-center'>
                 C: Crescimento <br />
                 O: Otimização <br />
                 V: Visiblidade <br />
                 E: Essência <br />
                 R: Relevância <br />
             </div>
-            </Animate>
+         
             </div>
 
             <div className="w-full">
-            <Animate>
-            <div id="proposito"  className="bg-white rounded-lg px-4 min-w-full min-h-[300px] pb-8 flex flex-col lg:flex-row gap-6 justify-center items-center">
+    
+            <div data-aos="zoom-in-left" id="proposito"  className="bg-white rounded-lg px-4 min-w-full min-h-[300px] pb-8 flex flex-col lg:flex-row gap-6 justify-center items-center">
                <div className="flex items-center gap-2">
                <h1 className="bg-blue-500 px-6 py-3 rounded-lg text-white font-bold text-3xl">Propósito</h1>
                <img src={proposito.src} alt="Propósito" className="max-w-[75px]"/>
@@ -85,7 +58,7 @@ export function Main() {
                 </p>
                  </div>   
             </div>
-            </Animate>
+ 
 
             <div id="servicos" className="bg-blue-500 rounded-lg min-w-full lg:p-16 p-4 md:px-20 lg:px-50">
             <div className="flex items-center gap-2">
@@ -93,62 +66,56 @@ export function Main() {
                <img src={servicos.src} alt="Propósito" className="max-w-[75px] rounded-full"/>
                </div>
                 <div className="w-full text-white flex flex-col flex-wrap gap-8 my-8">
-                    <Animate>
-                    <div  className="rounded-lg border-t-0 border-l-0 border-r-0 border-white border-b-2 p-4 w-full group">
+        
+                    <div data-aos="zoom-in-right" className="rounded-lg border-t-0 border-l-0 border-r-0 border-white border-b-2 p-4 w-full group">
                         <p className='font-bold'>Gestão de Redes Sociais (GRS)</p>
                         <p className='hidden group-hover:block p-4'>
 
                         </p>
                         </div>
-                    </Animate>
-                   <Animate>
-                   <div  className="rounded-lg border-t-0 border-l-0 border-r-0 border-white border-b-2 p-4 w-full group">
+                 
+                   <div data-aos="zoom-in-left"  className="rounded-lg border-t-0 border-l-0 border-r-0 border-white border-b-2 p-4 w-full group">
                         <p className='font-bold'>Gestão de Anuncios Online</p>
                         <p className='hidden group-hover:block p-4'>
 
                         </p>
                         </div>
-                   </Animate>
-                    <Animate>
-                    <div  className="rounded-lg border-t-0 border-l-0 border-r-0 border-white border-b-2 p-4 w-full group">
+                  
+                    <div data-aos="zoom-in-right"  className="rounded-lg border-t-0 border-l-0 border-r-0 border-white border-b-2 p-4 w-full group">
                         <p className='font-bold'>Criação de Conteudo Estratégico</p>
                         <p className='hidden group-hover:block p-4'>
 
                         </p>
                         </div>
-                    </Animate>
-                   <Animate>
-                   <div  className="rounded-lg border-t-0 border-l-0 border-r-0 border-white border-b-2 p-4 w-full group">
+            
+                   <div data-aos="zoom-in-left"  className="rounded-lg border-t-0 border-l-0 border-r-0 border-white border-b-2 p-4 w-full group">
                         <p className='font-bold'>Design Gráfico</p>
                         <p className='hidden group-hover:block p-4'>
 
                         </p>
                         </div>
-                   </Animate>
-                    <Animate>
-                    <div  className="rounded-lg border-t-0 border-l-0 border-r-0 border-white border-b-2 p-4 w-full group">
+              
+                    <div data-aos="zoom-in-right" className="rounded-lg border-t-0 border-l-0 border-r-0 border-white border-b-2 p-4 w-full group">
                         <p className='font-bold'>CopyWriting</p>
                         <p className='hidden group-hover:block p-4'>
 
                         </p>
                         </div>
-                    </Animate>
-                   <Animate>
-                   <div  className="rounded-lg border-t-0 border-l-0 border-r-0 border-white border-b-2 p-4 w-full group">
+                    
+                   <div data-aos="zoom-in-right" className="rounded-lg border-t-0 border-l-0 border-r-0 border-white border-b-2 p-4 w-full group">
                         <p className='font-bold'>Lançamento de info-produtos</p>
                         <p className='hidden group-hover:block p-4'>
 
                         </p>
                         </div>
-                   </Animate>
-                    <Animate>
-                    <div  className="rounded-lg border-t-0 border-l-0 border-r-0 border-white border-b-2 p-4 w-full group">
+                 
+                    <div data-aos="zoom-in-left"  className="rounded-lg border-t-0 border-l-0 border-r-0 border-white border-b-2 p-4 w-full group">
                         <p className='font-bold'>Criação de websites</p>
                         <p className='hidden group-hover:block p-4'>
 
                         </p>
                         </div>
-                    </Animate>
+      
                 </div>
             </div>
             <div id="portfolio" className="rounded-lg min-w-full flex flex-col gap-12 lg:gap-4 lg:p-16 p-4 md:px-20 lg:px-50">
@@ -157,11 +124,11 @@ export function Main() {
                <img src={portfolio.src} alt="Propósito" className="max-w-[75px] rounded-full"/>
                </div>
                 <div className="flex flex-wrap gap-4 justify-center items-center">
-                    <Animate>
-                    <div  className="p-4 rounded-lg w-[200px] bg-blue-500 text-white">
+            
+                    <div data-aos="zoom-in-right"  className="p-4 rounded-lg w-[200px] bg-blue-500 text-white">
                         oi
                     </div>
-                    </Animate>
+           
                 </div>
             </div>
             <div id="livros" className="rounded-lg min-w-full flex flex-col gap-12 lg:gap-4 lg:p-16 p-4 md:px-20 lg:px-50 bg-blue-500 text-white">
@@ -170,11 +137,11 @@ export function Main() {
                <img src={livros.src} alt="Propósito" className="max-w-[75px] rounded-full"/>
                </div>
                 <div className="flex flex-wrap gap-4 justify-center items-center">
-                   <Animate>
-                   <div  className="p-4 rounded-lg w-[200px] bg-blue-500 text-white">
+                 
+                   <div data-aos="zoom-in-left" className="p-4 rounded-lg w-[200px] bg-blue-500 text-white">
                         oi
                     </div>
-                   </Animate>
+                
                 </div>
             </div>
 
@@ -184,11 +151,11 @@ export function Main() {
                <img src={mentoria.src} alt="Propósito" className="max-w-[75px] rounded-full"/>
                </div>
                 <div className="flex flex-wrap gap-4 justify-center items-center">
-                    <Animate>
-                    <div  className="p-4 rounded-lg w-[200px] drop-shadow-lgborder-b-0 border-t-0 border-r-0 boder-l-0 border-blue-500 border-b">
+                 
+                    <div data-aos="zoom-in-right" className="p-4 rounded-lg w-[200px] drop-shadow-lgborder-b-0 border-t-0 border-r-0 boder-l-0 border-blue-500 border-b">
                         oi
                     </div>
-                    </Animate>
+                  
                 </div>
             </div>
 
@@ -199,11 +166,11 @@ export function Main() {
                <img src={bastidores.src} alt="Propósito" className="max-w-[75px] rounded-full"/>
                </div>
                 <div className="flex flex-wrap gap-4 justify-center items-center">
-                    <Animate>
-                    <div  className="p-4 rounded-lg w-[200px] drop-shadow-lgborder-b-0 border-t-0 border-r-0 boder-l-0 border-blue-500 border-b">
+                 
+                    <div data-aos="zoom-in-left"  className="p-4 rounded-lg w-[200px] drop-shadow-lgborder-b-0 border-t-0 border-r-0 boder-l-0 border-blue-500 border-b">
                         oi
                     </div>
-                    </Animate>
+                    
                 </div>
             </div>
 
@@ -214,11 +181,11 @@ export function Main() {
                <img src={rubrica.src} alt="Propósito" className="max-w-[75px] rounded-full"/>
                </div>
                 <div className="flex flex-wrap gap-4 justify-center items-center">
-                    <Animate>
-                    <div  className="p-4 rounded-lg w-[200px] drop-shadow-lgborder-b-0 border-t-0 border-r-0 boder-l-0 border-blue-500 border-b">
+                  
+                    <div data-aos="zoom-in-right" className="p-4 rounded-lg w-[200px] drop-shadow-lgborder-b-0 border-t-0 border-r-0 boder-l-0 border-blue-500 border-b">
                         oi
                     </div>
-                    </Animate>
+                    
                 </div>
             </div>
 
@@ -229,11 +196,11 @@ export function Main() {
                <img src={dicas.src} alt="Propósito" className="max-w-[75px] rounded-full"/>
                </div>
                 <div className="flex flex-wrap gap-4 justify-center items-center">
-                    <Animate>
-                    <div  className="p-4 rounded-lg w-[200px] drop-shadow-lgborder-b-0 border-t-0 border-r-0 boder-l-0 border-blue-500 border-b">
+                    
+                    <div data-aos="zoom-in-left" className="p-4 rounded-lg w-[200px] drop-shadow-lgborder-b-0 border-t-0 border-r-0 boder-l-0 border-blue-500 border-b">
                         oi
                     </div>
-                    </Animate>
+                   
                 </div>
             </div>
 
@@ -244,11 +211,11 @@ export function Main() {
                <img src={parceria.src} alt="Propósito" className="max-w-[75px] rounded-full"/>
                </div>
                 <div className="flex flex-wrap gap-4 justify-center items-center">
-                    <Animate>
-                    <div  className="p-4 rounded-lg w-[200px] drop-shadow-lgborder-b-0 border-t-0 border-r-0 boder-l-0 border-blue-500 border-b">
+                    
+                    <div data-aos="zoom-in-right"  className="p-4 rounded-lg w-[200px] drop-shadow-lgborder-b-0 border-t-0 border-r-0 boder-l-0 border-blue-500 border-b">
                         oi
                     </div>
-                    </Animate>
+                   
                 </div>
             </div>
 
@@ -259,11 +226,11 @@ export function Main() {
                <img src={feedbacks.src} alt="Propósito" className="max-w-[75px] rounded-full"/>
                </div>
                 <div className="flex flex-wrap gap-4 justify-center items-center">
-                    <Animate>
-                    <div  className="p-4 rounded-lg w-[200px] drop-shadow-lgborder-b-0 border-t-0 border-r-0 boder-l-0 border-blue-500 border-b">
+                 
+                    <div data-aos="zoom-in-left"  className="p-4 rounded-lg w-[200px] drop-shadow-lgborder-b-0 border-t-0 border-r-0 boder-l-0 border-blue-500 border-b">
                         oi
                     </div>
-                    </Animate>
+                 
                 </div>
             </div>
             </div>
