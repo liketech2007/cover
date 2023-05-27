@@ -58,7 +58,7 @@ export function Header() {
                         <Link href="#rubrica" className="border-b-0 border-t-0 border-r-0 boder-l-0 border-blue-500 p-4 hover:border-b  transition-all flex justify-center items-center" onClick={() => setOpenMenu(false)}>Rubrica</Link>
                         <Link href="#dicas" className="border-b-0 border-t-0 border-r-0 boder-l-0 border-blue-500 p-4 hover:border-b  transition-all flex justify-center items-center" onClick={() => setOpenMenu(false)}>Dicas</Link>
                         <Link href="#parceria" className="border-b-0 border-t-0 border-r-0 boder-l-0 border-blue-500 p-4 hover:border-b  transition-all flex justify-center items-center" onClick={() => setOpenMenu(false)}>Parceria Cover</Link>
-                        <Link href="#feedbacks" className="border-b-0 border-t-0 border-r-0 boder-l-0 border-blue-500 p-4 hover:border-b  transition-all flex justify-center items-center" >Feedbacks</Link>  
+                        <Link href="#feedbacks" className="border-b-0 border-t-0 border-r-0 boder-l-0 border-blue-500 p-4 hover:border-b  transition-all flex justify-center items-center" onClick={() => setOpenMenu(false)}>Feedbacks</Link>  
                         </ul>
                         </div>
                         </li>
