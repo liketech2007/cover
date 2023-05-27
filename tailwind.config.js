@@ -8,10 +8,11 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
+        "homen": "url('../assets/homen.png')",
       },
       colors: {
         blue: {
-          "500": "#418FD2"
+          "500": "#1B89DA"
         }
       }
     },
